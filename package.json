@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Restaurant Reservations",
   "main": "bin/www",
-  "repository": "git@github.com:pedrolacerda/restaurant-reservation.git",
+  "repository": "git@github.com:santospedroh/restaurant-reservation.git",
   "author": "Jon Peck <jpeck@fluxsauce.com>",
   "license": "MIT",
   "private": true,
@@ -11,7 +11,7 @@
     "coverage": "cross-env DEBUG=restaurant-reservation:* nyc --reporter=text --reporter=html mocha --recursive",
     "debug": "cross-env DEBUG=restaurant-reservation:* nodemon",
     "eslint": "eslint",
-    "test": "cross-env DEBUG=restaurant-reservation:* mocha --recursive",
+    "test": "mocha --recursive",
     "start": "node bin/www"
   },
   "dependencies": {
@@ -33,8 +33,8 @@
     "chai": "^4.3.4",
     "chai-http": "^4.3.0",
     "cross-env": "^5.0.1",
-    "eslint": "^7.21.0",
-    "mocha": "^8.3.2",
+    "eslint": "^7.27.0",
+    "mocha": "^8.4.0",
     "nodemon": "^1.11.0",
     "nyc": "^15.1.0",
     "proxyquire": "^2.1.3",

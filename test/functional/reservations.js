@@ -2,13 +2,13 @@ const chai = require('chai');
 const chaiHttp = require('chai-http');
 const proxyquire = require('proxyquire');
 const sinon = require('sinon');
-const logger = require('morgan');
+//const logger = require('morgan');
 chai.use(chaiHttp);
 const should = chai.should();
 
 describe('/reservations', function() {
   let dbStub;
-  let loggerStub;
+ // let loggerStub;
   let debugStub;
   let app;
 
@@ -24,11 +24,11 @@ describe('/reservations', function() {
     };
     dbStub['@global'] = true;
 
-    loggerStub = sinon
-      .stub(logger, 'morgan')
-      .returns(function(req, res, next) {
-        next();
-      });
+   // loggerStub = sinon
+   //  .stub(logger, 'morgan')
+   //   .returns(function(req, res, next) {
+   //     next();
+   //   });
 
     debugStub = function() {
       return sinon.stub();
@@ -37,13 +37,13 @@ describe('/reservations', function() {
 
     app = proxyquire('../../app', {
       sqlite: dbStub,
-      morgan: loggerStub,
+      //morgan: loggerStub,
       debug: debugStub
     });
   });
 
   after(function() {
-    loggerStub.restore();
+    //loggerStub.restore();
   });
 
   context('GET', function() {
